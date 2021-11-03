@@ -1,6 +1,7 @@
 package com.demo2.api_demo2.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import com.demo2.api_demo2.models.ClienteModel;
 import com.demo2.api_demo2.repositories.ClienteRepository;
@@ -20,4 +21,18 @@ public class ClienteService {
     public ClienteModel guardarCliente(ClienteModel cliente){
         return clienteRepository.save(cliente);
     }
+
+    public boolean eliminarCliente(Long id){
+        if (clienteRepository.existsById(id)){
+            clienteRepository.deleteById(id);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public Optional<ClienteModel> obtenerClientePorId(Long id){
+        return clienteRepository.findById(id);
+    }
+       
 }

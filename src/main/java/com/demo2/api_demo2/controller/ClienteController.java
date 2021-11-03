@@ -1,13 +1,16 @@
 package com.demo2.api_demo2.controller;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import com.demo2.api_demo2.models.ClienteModel;
 import com.demo2.api_demo2.services.ClienteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,4 +34,19 @@ public class ClienteController {
         return clienteService.guardarCliente(cliente);
 
     }
+    @DeleteMapping(path="/{id}")
+    public String eliminarClientePorId(@PathVariable("id") Long id){
+        boolean resultadoEliminar = this.clienteService.eliminarCliente(id);
+        if(resultadoEliminar){
+            return "Se elimino el cliente con id: "+id;
+        }
+        else{
+            return "Ocurrio un error el eliminar cliente con id: "+id;
+        }
+    }
+    @GetMapping(path ="/{id}")
+    public Optional<ClienteModel> obteneClientePorId(@PathVariable("id") Long id){
+        return this.clienteService.obtenerClientePorId(id); 
+    }
+
 }

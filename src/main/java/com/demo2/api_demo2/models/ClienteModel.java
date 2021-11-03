@@ -3,6 +3,7 @@ package com.demo2.api_demo2.models;
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 public class ClienteModel {
     @Id
