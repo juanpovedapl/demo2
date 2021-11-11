@@ -1,5 +1,6 @@
 package com.demo2.api_demo2.services;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -34,5 +35,11 @@ public class ClienteService {
     public Optional<ClienteModel> obtenerClientePorId(Long id){
         return clienteRepository.findById(id);
     }
-       
+      
+    public ArrayList<ClienteModel> obtClientePorFRegistro(LocalDate fRegistro){
+         return clienteRepository.findByFRegistro(fRegistro);
+    }
+    public ArrayList <ClienteModel> obtClientePorNombre(String nombre){
+         return clienteRepository.findByNombre(nombre);
+    }
 }
