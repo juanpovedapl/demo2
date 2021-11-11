@@ -11,19 +11,20 @@ public class ClienteModel {
     
     private String nombre, apellido, email;
     private LocalDate fRegistro;
-
+    private AddressModel address;
 
     public ClienteModel() {
     }
 
 
-    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fRegistro) {
+    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fRegistro, AddressModel address) {
         
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.fRegistro = fRegistro;
+        this.address = address
     }
 
 
@@ -75,7 +76,13 @@ public class ClienteModel {
     public void setfRegistro(LocalDate fRegistro) {
         this.fRegistro = fRegistro;
     }
-
     
+    public void setAddress (AddressModel address){
+        this.address = address;
+    }
+    
+    public AddressModel getAddressModel(){
+        return address;
+    }
 }
 
