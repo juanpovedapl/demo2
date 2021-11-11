@@ -24,7 +24,7 @@ public class ClienteModel {
         this.apellido = apellido;
         this.email = email;
         this.fRegistro = fRegistro;
-        this.address = address
+        this.address = address;
     }
 
 
