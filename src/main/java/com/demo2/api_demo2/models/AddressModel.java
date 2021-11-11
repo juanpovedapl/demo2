@@ -9,4 +9,8 @@ public class AddressModel {
     private String ciudad;
     private String departamaento;
     private String codigoPostal;
+   
+    public AddressModel(){
+
+    }
 }

@@ -1,11 +1,13 @@
 package com.demo2.api_demo2.models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-
-public class ClienteModel {
+@Document
+public class ClienteModel implements Serializable{
     @Id
     private long id;
     
@@ -81,7 +83,7 @@ public class ClienteModel {
         this.address = address;
     }
     
-    public AddressModel getAddressModel(){
+    public AddressModel getAddress(){
         return address;
     }
 }
