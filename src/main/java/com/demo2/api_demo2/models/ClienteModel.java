@@ -1,6 +1,7 @@
 package com.demo2.api_demo2.models;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,19 +12,24 @@ public class ClienteModel {
     
     private String nombre, apellido, email;
     private LocalDate fRegistro;
+    private List<ProductModel> productos;
+    private AddressModel  address;
 
 
     public ClienteModel() {
     }
 
 
-    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fRegistro) {
-        
+    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fRegistro,
+            List<ProductModel> productos, AddressModel address) {
+    
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.fRegistro = fRegistro;
+        this.productos = productos;
+        this.address = address;
     }
 
 
@@ -75,6 +81,29 @@ public class ClienteModel {
     public void setfRegistro(LocalDate fRegistro) {
         this.fRegistro = fRegistro;
     }
+
+
+    public List<ProductModel> getProductos() {
+        return productos;
+    }
+
+
+    public void setProductos(List<ProductModel> productos) {
+        this.productos = productos;
+    }
+
+
+    public AddressModel getAddress() {
+        return address;
+    }
+
+
+    public void setAddress(AddressModel address) {
+        this.address = address;
+    }
+    
+
+
 
     
 }
