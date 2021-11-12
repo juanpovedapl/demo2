@@ -1,6 +1,7 @@
 package com.demo2.api_demo2.services;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -43,6 +44,10 @@ public class ClienteService {
     public ArrayList <ClienteModel> obtenerPorNombre(String nombre){
          return clienteRepository.findByNombre(nombre);
     }
+    public ArrayList <ClienteModel> obtenerFechaRegistro(LocalDate fechaRegistro){
+        return clienteRepository.findByFechaRegistro(fechaRegistro);
+   }
+
 
 
 }
