@@ -1,6 +1,6 @@
 package com.demo2.api_demo2.repositories;
 
-import java.security.PublicKey;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -14,6 +14,9 @@ import org.springframework.stereotype.Repository;
 public interface ClienteRepository extends MongoRepository <ClienteModel ,Long>{
    
     public abstract  ArrayList <ClienteModel> findByNombre (String nombre);
+
+    @Query ("{apelldio:'?0'}")
+    ArrayList <ClienteModel> findByApellido(String apellido);
 
     @Query ("{fRegistro:'?0'}")
     ArrayList <ClienteModel> findByFRegistro(LocalDate fRegistro);

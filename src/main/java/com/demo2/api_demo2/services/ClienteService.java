@@ -1,6 +1,6 @@
 package com.demo2.api_demo2.services;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -9,6 +9,7 @@ import com.demo2.api_demo2.repositories.ClienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class ClienteService {
@@ -36,10 +37,12 @@ public class ClienteService {
         return clienteRepository.findById(id);
     }
       
-    public ArrayList<ClienteModel> obtClientePorFRegistro(LocalDate fRegistro){
-         return clienteRepository.findByFRegistro(fRegistro);
+    public ArrayList<ClienteModel> obtenerPorApellido(String apellido){
+         return clienteRepository.findByApellido(apellido);
     }
-    public ArrayList <ClienteModel> obtClientePorNombre(String nombre){
+    public ArrayList <ClienteModel> obtenerPorNombre(String nombre){
          return clienteRepository.findByNombre(nombre);
     }
+
+
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -48,5 +49,16 @@ public class ClienteController {
     public Optional<ClienteModel> obteneClientePorId(@PathVariable("id") Long id){
         return this.clienteService.obtenerClientePorId(id); 
     }
+
+    @GetMapping("/query")
+    public ArrayList<ClienteModel> cliantePorApellido (@RequestParam("apellido") String apellido){
+        return this.clienteService.obtenerPorApellido(apellido);
+    }
+    @GetMapping(path="/nombre/{nombre}")
+    public ArrayList<ClienteModel> cliantePorNombre (@PathVariable("nombre") String nombre){
+        return this.clienteService.obtenerPorNombre(nombre);
+    }
+    
+
 
 }
