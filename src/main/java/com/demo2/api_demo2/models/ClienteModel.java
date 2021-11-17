@@ -20,14 +20,14 @@ public class ClienteModel {
     }
 
 
-    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fRegistro,
+    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fechaRegistro,
             List<ProductModel> productos, AddressModel address) {
     
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.fechaRegistro = fRegistro;
+        this.fechaRegistro = fechaRegistro;
         this.productos = productos;
         this.address = address;
     }
@@ -73,12 +73,12 @@ public class ClienteModel {
     }
 
 
-    public LocalDate getfRegistro() {
+    public LocalDate getfechaRegistro() {
         return fechaRegistro;
     }
 
 
-    public void setfRegistro(LocalDate fechaRegistro) {
+    public void setfechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
