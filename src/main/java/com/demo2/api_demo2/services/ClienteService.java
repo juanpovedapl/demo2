@@ -25,7 +25,7 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    public boolean eliminarCliente(Long id){
+    public boolean eliminarCliente(String id){
         if (clienteRepository.existsById(id)){
             clienteRepository.deleteById(id);
             return true;
@@ -34,7 +34,7 @@ public class ClienteService {
             return false;
         }
     }
-    public Optional<ClienteModel> obtenerClientePorId(Long id){
+    public Optional<ClienteModel> obtenerClientePorId(String id){
         return clienteRepository.findById(id);
     }
       

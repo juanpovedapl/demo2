@@ -37,7 +37,7 @@ public class ClienteController {
     }
 
     @DeleteMapping(path = "{id}")
-    public String eliminarClientePorId(@PathVariable("id") Long id) {
+    public String eliminarClientePorId(@PathVariable("id") String id) {
         boolean resultadoEliminar = this.clienteService.eliminarCliente(id);
         if (resultadoEliminar) {
             return "Se elimino el cliente con id: " + id;
@@ -47,7 +47,7 @@ public class ClienteController {
     }
 
     @GetMapping(path = "{id}")
-    public Optional<ClienteModel> obteneClientePorId(@PathVariable("id") Long id) {
+    public Optional<ClienteModel> obteneClientePorId(@PathVariable("id") String id) {
         return this.clienteService.obtenerClientePorId(id);
     }
 

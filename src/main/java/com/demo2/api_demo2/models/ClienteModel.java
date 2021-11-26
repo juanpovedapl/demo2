@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 
 public class ClienteModel {
     @Id
-    private long id;
+    private String id;
     
     private String nombre, apellido, email;
     private LocalDate fechaRegistro;
@@ -20,7 +20,7 @@ public class ClienteModel {
     }
 
 
-    public ClienteModel(long id, String nombre, String apellido, String email, LocalDate fechaRegistro,
+    public ClienteModel(String id, String nombre, String apellido, String email, LocalDate fechaRegistro,
             List<ProductModel> productos, AddressModel address) {
     
         this.id = id;
@@ -33,12 +33,12 @@ public class ClienteModel {
     }
 
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
