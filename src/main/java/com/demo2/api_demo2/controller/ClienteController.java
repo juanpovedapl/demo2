@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -65,7 +66,10 @@ public class ClienteController {
     public ArrayList<ClienteModel> clientePorFechaRegistro(@PathVariable("registro") LocalDate fechaRegistro) {
         return this.clienteService.obtenerFechaRegistro(fechaRegistro);
     }
-    
+    @GetMapping("ciudad/query")
+    public ArrayList<ClienteModel> clientePorCiudad(@RequestParam("ciudad") String ciudad){
+        return this.clienteService.obtenerClientePorCiudad(ciudad);
+    }
     
 
 }

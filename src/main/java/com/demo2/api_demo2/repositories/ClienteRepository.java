@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import com.demo2.api_demo2.models.ClienteModel;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -17,4 +18,7 @@ public interface ClienteRepository extends MongoRepository <ClienteModel ,String
     ArrayList <ClienteModel> findByApellido (String apellido);
 
     ArrayList <ClienteModel> findByFechaRegistro(LocalDate fechaRegistro);
+    
+    @Query ("{'address.ciudad':?0}")
+    ArrayList<ClienteModel> buPorCiudad(String ciudad);
 }
